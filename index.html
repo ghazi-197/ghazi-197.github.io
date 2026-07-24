@@ -25,7 +25,7 @@
             padding: 0;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
         }
@@ -80,11 +80,11 @@
             color: #fff;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 15fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
         .card {
@@ -97,6 +97,50 @@
             margin-top: 0;
             color: #fff;
         }
+        
+        /* Video Container Setup */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Responsive Screenshot Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         ul {
             padding-left: 20px;
         }
@@ -128,8 +172,7 @@
             <p style="max-width: 600px; margin: 0 auto 30px auto; color: #cbd5e1;">
                 Keep your desktop clean without sacrificing instant access to your tools. Deskepty is a lightweight, zero-bloat launcher panel that stays hidden until you need it. 
             </p>
-            <!-- Change the URL in href to your real store link once the index updates -->
-            <a href="https://apps.microsoft.com/detail/9NDCP4772TZC" class="cta-btn" target="_blank" rel="noopener">Get Deskepty on Microsoft Store</a>
+            <a href="https://microsoft.com" class="cta-btn" target="_blank" rel="noopener">Get Deskepty on Microsoft Store</a>
             
             <div class="badge-container">
                 <span class="badge">One-Time Purchase</span>
@@ -137,6 +180,33 @@
                 <span class="badge">100% Offline</span>
             </div>
         </header>
+
+        <!-- Video Showcase Section -->
+        <section>
+            <h2>See Deskepty in Action</h2>
+            <div class="video-wrapper">
+                <!-- Change the ID '6ulKp6ipltI' below if you want to use a different video walkthrough -->
+                <iframe src="https://youtube.com" title="Deskepty Walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Screenshot Gallery Section -->
+        <section>
+            <h2>Interface Screenshots</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/1.png" alt="Deskepty Core Interface"></div>
+                <div class="gallery-item"><img src="images/2.png" alt="Deskepty Theme Settings"></div>
+                <div class="gallery-item"><img src="images/3.png" alt="Deskepty Floating Folders Layout"></div>
+                <div class="gallery-item"><img src="images/4.png" alt="Deskepty Floating Folders Layout"></div>
+                <div class="gallery-item"><img src="images/5.png" alt="Deskepty Floating Folders Layout"></div>
+                <div class="gallery-item"><img src="images/6.png" alt="Deskepty Floating Folders Layout"></div>
+                <div class="gallery-item"><img src="images/7.png" alt="Deskepty Floating Folders Layout"></div>
+                <div class="gallery-item"><img src="images/8.png" alt="Deskepty Floating Folders Layout"></div>
+                <div class="gallery-item"><img src="images/9.png" alt="Deskepty Floating Folders Layout"></div>
+                <div class="gallery-item"><img src="images/10.png" alt="Deskepty Floating Folders Layout"></div>
+            </div>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px; text-align: center;">Make sure image filenames exactly match screenshot1.png, screenshot2.png, etc.</p>
+        </section>
 
         <section class="grid">
             <div class="card">
@@ -173,15 +243,3 @@
             </div>
         </section>
 
-        <section style="color: #94a3b8; font-size: 0.95rem;">
-            <p><strong>System Requirements:</strong> Fully compatible with native Windows 10 and Windows 11 architectures (64-bit systems only).</p>
-        </section>
-
-        <footer>
-            <p>Deskepty &copy; 2026. Built with pride by an independent developer. No Ads. No Telemetry. Just Software.</p>
-        </footer>
-
-    </div>
-
-</body>
-</html>
